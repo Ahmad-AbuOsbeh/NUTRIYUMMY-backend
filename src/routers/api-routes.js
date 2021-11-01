@@ -69,7 +69,11 @@ async function getMyComplaintsHandler(req, res, next) {
 // create complaint handler
 async function createComplaintHandler(req, res, next) {
   const { username, email, city } = req.user;
-  const { complaintID, complaintType, complaintContent, complaintDate, invoiceNumber } = req.body;
+  const { complaintType, complaintContent, complaintDate, invoiceNumber } = req.body;
+
+  // generate unique id for the complaint
+  const complaintID = `${username.slice(0, 3)}-${Math.floor(Math.random() * (100000 - 10000)) + 10000}`;
+
   const obj = {
     complaint_id: complaintID,
     complaint_type: complaintType,
