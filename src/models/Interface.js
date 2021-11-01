@@ -15,6 +15,11 @@ class Interface {
     }
   }
 
+  // get by email
+  getByMail(email) {
+    return this.model.find({ customer_email: email });
+  }
+
   // post method
   create(document) {
     let newDocument = new this.model(document);
