@@ -33,10 +33,10 @@ users.virtual('token').get(function () {
 // get capabilities for the user depending on his role
 users.virtual('capabilities').get(function () {
   let acl = {
-    user: ['read'],
+    user: ['read-limitted', 'create', 'delete-limitted'],
     writer: ['read', 'create'],
     editor: ['read', 'create', 'update'],
-    admin: ['read', 'create', 'update', 'delete'],
+    admin: ['read-all', 'create', 'update', 'delete-all'],
   };
   return acl[this.role];
 });
