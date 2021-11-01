@@ -61,9 +61,7 @@ users.statics.authenticateBasic = async function (email, password) {
 // create static method for bearer authentication
 users.statics.authenticateWithToken = async function (token) {
   try {
-    console.log('befor verify');
     const parsedToken = jwt.verify(token, SECRET);
-    console.log('parsedToken', parsedToken);
     const user = this.findOne({ username: parsedToken.username });
     if (user) {
       return user;
