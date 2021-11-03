@@ -24,8 +24,8 @@ module.exports = async (req, res, next) => {
     errorByAuthentication();
   }
 
-  // error handler for invalid token
+  // error handler for invalid username or password
   function errorByAuthentication() {
-    next('Invalid Token');
+    next('Invalid username or password');
   }
 };

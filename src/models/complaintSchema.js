@@ -10,7 +10,7 @@ const complaintSchema = new Schema({
   complaint_content: String,
   complaint_date: { type: String, required: true },
   invoice_number: { type: Number, required: true, unique: true },
-  complaint_status: { type: String, required: true, default: 'pending' },
+  complaint_status: { type: String, required: true, default: 'Pending' },
   customer_username: { type: String, required: true },
   customer_email: { type: String, required: true },
   customer_position: String,
