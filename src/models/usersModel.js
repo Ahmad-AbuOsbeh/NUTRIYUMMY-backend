@@ -6,7 +6,7 @@ const jwt = require('jsonwebtoken');
 require('dotenv').config();
 
 //secret for jwt
-const SECRET = process.env.SECRET;
+const SECRET = process.env.SECRET || 'ahmad12345$';
 
 // create users schema
 const users = new mongoose.Schema({
